@@ -11,13 +11,13 @@ Number of rows: 100 (each representing one streamer)
 Number of columns: 6
 Each row corresponds to a single streamer, and each column represents a quantitative or categorical variable describing their activity or audience.
 ## Questions Generated:
-## Who is the most successful streamer, and what factors contribute most to their success?
+### Who is the most successful streamer, and what factors contribute most to their success?
 This question seeks to identify which streamer demonstrates the highest level of success based on measurable performance indicators such as total watch time, average viewers, stream time, and followers. By analyzing these quantitative variables, we can develop a multi-dimensional view of what “success” looks like on Twitch — whether it is driven by consistent audience engagement, frequent streaming activity, or a large follower base.
 Why it’s important:
 Economic impact: Streaming has evolved into a billion-dollar industry, with top streamers generating significant revenue through sponsorships, subscriptions, and advertising. Understanding what drives success can provide valuable insights for emerging creators and marketing professionals aiming to enter this digital economy.
 Cultural relevance: Streamers play a key role in shaping online communities and digital entertainment culture. Identifying the factors behind their popularity can help explain modern shifts in media consumption, fandom, and influencer influence.
 Data connection: This question ties directly to multiple quantitative fields in the dataset — particularly Total_Watch_Time, Average_Viewers, Stream_Time, and Followers — which together can be used to measure and compare success using both descriptive and inferential analysis.
-## What patterns differentiate top-performing streamers from the rest?
+### What patterns differentiate top-performing streamers from the rest?
 This question focuses on identifying broader patterns and trends that distinguish high-performing streamers from those with lower engagement levels. The analysis may include exploring correlations among variables, clustering streamers based on performance metrics, or visualizing patterns across activity and audience size.
 Why it’s important:
 Social insight: Understanding these patterns highlights how streamers build and sustain audiences — revealing strategies behind engagement, consistency, and community-building.
