@@ -1,6 +1,6 @@
 # MIST4610-Project2-Group1
 ## Team Members:
-1. Kern, Abigail ([@abbykern6](https://github.com/abbykern6))
+1. Kern, Abigail 
 2. Lauryn Thomas
 3. Avery Carabajal
 4. Will Hooks
@@ -94,6 +94,8 @@ FROM twitch_data
 WHERE "Peak viewers" = (
     SELECT MIN("Peak viewers")
     FROM twitch_data);
+## Snowflake Dashboard:
+https://app.snowflake.com/us-east-1/qoc09333/#/twitchdash-dOKchud1
 
 
 
