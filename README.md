@@ -26,3 +26,76 @@ Analytical value: This question encourages data-driven exploration, including te
 Broader impact: These insights contribute to understanding digital labor patterns and online success factors, relevant in an era where influencer marketing and live content creation have become mainstream careers.
 ## Manipulations Applied:
 Our data is sourced from an online Twitch dataset. We did not apply any manipulations such as averages or transformations unless they were required for specific queries. However, we did conduct additional research and added a new column classifying the primary language of each channel. This allowed us to introduce more variety into the dataset by incorporating a varchar attribute rather than relying solely on integers and boolean values.
+## Question 1 Queries:
+### 1) Which streamers have the highest follower base?
+SELECT Channel, Followers, Followers_gained
+FROM streamers
+ORDER BY Followers DESC;
+### 2) Which streamers have the highest average viewers?
+SELECT Channel, Average_viewers
+FROM streamers
+ORDER BY Average_viewers DESC
+LIMIT 5;
+### 3) How engaged is each follower? Calculate Engagement Per Follower:
+SELECT
+    STREAMER,
+    TOTAL_WATCH_TIME,
+    FOLLOWERS,
+    TOTAL_WATCH_TIME / NULLIF(FOLLOWERS, 0) AS WATCH_TIME_PER_FOLLOWER
+FROM TWITCH_STREAMERS
+ORDER BY WATCH_TIME_PER_FOLLOWER DESC;
+### 4) Watch time per hours streamed:
+SELECT
+    STREAMER,
+    TOTAL_WATCH_TIME / NULLIF(STREAM_TIME, 0) AS WATCH_TIME_PER_STREAM_SECOND
+FROM TWITCH_STREAMERS
+ORDER BY WATCH_TIME_PER_STREAM_SECOND DESC;
+### 5) Find the top performers within each language by comparing each streamer to the max views for their language.
+WITH stats AS (
+    SELECT
+        language,
+        name,
+        avg_views,
+        MAX(avg_views) OVER (PARTITION BY language) AS max_views_lang
+    FROM streamers)
+SELECT
+    language,
+    COUNT(*) AS top_streamers,
+    AVG(avg_views) AS avg_top_views
+FROM stats
+WHERE avg_views >= 0.90 * max_views_lang   -- top ~10% based on ratio
+GROUP BY language
+ORDER BY top_streamers DESC;
+## Question 2 Queries:
+### 1) Do the streamers who stream the most, get the most views? Is high stream time linked to success?
+SELECT Channel,
+    "Watch time(Minutes)",
+    "Stream time(minutes)",
+    ("Watch time(Minutes)" * 100.0 / "Stream time(minutes)") AS percent_viewed
+FROM
+    streams_data
+ORDER BY
+    percent_viewed DESC;
+### 2) Does being a mature streamer increase watch time? This compares mature vs non mature streamers watch time:
+SELECT Mature,
+       AVG("Watch time (minutes)") AS avg_watch_time,
+       SUM("Watch time (minutes)") AS total_watch_time,
+       COUNT(*) AS num_streams
+FROM twitch_data
+GROUP BY Mature;
+### 3) How many followers do the streamers with the 10 lowest average view time have?
+SELECT Channel, "Followers", "Average viewers"
+FROM twitch_data
+ORDER BY "Followers" ASC
+LIMIT 10;
+### 4) Which channel had the lowest peak viewers , indicating a lack of viral moments?
+SELECT Channel, "Peak viewers"
+FROM twitch_data
+WHERE "Peak viewers" = (
+    SELECT MIN("Peak viewers")
+    FROM twitch_data);
+
+
+
+
+
