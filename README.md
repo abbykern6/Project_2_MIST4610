@@ -44,12 +44,14 @@ SELECT
     TOTAL_WATCH_TIME / NULLIF(FOLLOWERS, 0) AS WATCH_TIME_PER_FOLLOWER
 FROM TWITCH_STREAMERS
 ORDER BY WATCH_TIME_PER_FOLLOWER DESC;
-### 4) Watch time per hours streamed:
+### 4) Do partnered streamers generate more watch time per minute streamed than non-partnered streamers?
 SELECT
-    STREAMER,
-    TOTAL_WATCH_TIME / NULLIF(STREAM_TIME, 0) AS WATCH_TIME_PER_STREAM_SECOND
-FROM TWITCH_STREAMERS
-ORDER BY WATCH_TIME_PER_STREAM_SECOND DESC;
+    Partnered,
+    COUNT(*) AS Num_Streamers,
+    AVG(Watch_time_minutes / NULLIF(Stream_time_minutes, 0)) AS Avg_WatchTime_Per_StreamSecond
+FROM Twitch_Streamers
+GROUP BY Partnered
+ORDER BY Avg_WatchTime_Per_StreamSecond DESC;
 ### 5) Find the top performers within each language by comparing each streamer to the max views for their language.
 WITH stats AS (
     SELECT
