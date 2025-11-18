@@ -31,6 +31,8 @@ Our data is sourced from an online Twitch dataset. We did not apply any manipula
 SELECT Channel, Followers, Followers_gained
 FROM streamers
 ORDER BY Followers DESC;
+<img width="991" height="191" alt="Screenshot 2025-11-17 at 11 14 04 PM" src="https://github.com/user-attachments/assets/8ef52eda-fe95-44d4-98f7-802b98510a55" />
+
 ### 2) Which streamers have the highest average viewers?
 SELECT Channel, Average_viewers
 FROM streamers
@@ -110,8 +112,8 @@ GROUP BY Partnered
 ORDER BY avg_watch_time_per_stream_minute DESC;
 ## Snowflake Dashboard:
 https://app.snowflake.com/us-east-1/qoc09333/#/twitchdash-dOKchud1
-## Snowflake Graphs
-<img width="953" height="331" alt="Screenshot 2025-11-17 at 11 06 16 PM" src="https://github.com/user-attachments/assets/cba409e9-5578-4641-87bf-70cf810e0066" />
+
+
 
 
 
