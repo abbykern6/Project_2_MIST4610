@@ -38,6 +38,8 @@ SELECT Channel, Average_viewers
 FROM streamers
 ORDER BY Average_viewers DESC
 LIMIT 5;
+<img width="387" height="147" alt="Screenshot 2025-11-17 at 11 14 37 PM" src="https://github.com/user-attachments/assets/039070a5-4aab-41eb-bf3e-3b52cdfdb850" />
+
 ### 3) How engaged is each follower? Calculate Engagement Per Follower:
 SELECT
     STREAMER,
@@ -46,6 +48,8 @@ SELECT
     TOTAL_WATCH_TIME / NULLIF(FOLLOWERS, 0) AS WATCH_TIME_PER_FOLLOWER
 FROM TWITCH_STREAMERS
 ORDER BY WATCH_TIME_PER_FOLLOWER DESC;
+<img width="387" height="147" alt="Screenshot 2025-11-17 at 11 15 10 PM" src="https://github.com/user-attachments/assets/4bcb8871-75cd-4c20-a6b3-687a24b65ecc" />
+
 ### 4) Do partnered streamers generate more watch time per minute streamed than non-partnered streamers?
 SELECT
     Partnered,
@@ -54,6 +58,8 @@ SELECT
 FROM Twitch_Streamers
 GROUP BY Partnered
 ORDER BY Avg_WatchTime_Per_StreamSecond DESC;
+<img width="451" height="147" alt="Screenshot 2025-11-17 at 11 15 32 PM" src="https://github.com/user-attachments/assets/e120e5eb-65d1-4999-be7d-158cf09098a0" />
+
 ### 5) Find the top performers within each language by comparing each streamer to the max views for their language.
 WITH stats AS (
     SELECT
@@ -70,6 +76,8 @@ FROM stats
 WHERE avg_views >= 0.90 * max_views_lang   -- top ~10% based on ratio
 GROUP BY language
 ORDER BY top_streamers DESC;
+<img width="1299" height="166" alt="Screenshot 2025-11-17 at 11 16 10 PM" src="https://github.com/user-attachments/assets/22e615d8-7009-4a8d-8bda-0457109b4f25" />
+
 ## Question 2 Queries:
 ### 1) Do the streamers who stream the most, get the most views? Is high stream time linked to success?
 SELECT Channel,
