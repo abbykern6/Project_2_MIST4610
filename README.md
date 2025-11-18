@@ -1,8 +1,8 @@
 # MIST4610-Project2-Group1
 ## Team Members:
 1. Abigail Kern ([@abbykern6](https://github.com/abbykern6))
-2. Lauryn Thomas
-3. Avery Carabajal
+2. Lauryn Thomas 
+3. Avery Carabajal ([@avery-carabajal](https://github.com/avery-carabajal))
 4. Will Hooks
 ## Dataset Description:
 This dataset contains information about popular Twitch streamers and their performance metrics on the platform. Twitch is a live-streaming service primarily focused on gaming, entertainment, and creative content. The dataset captures quantitative data that reflects each streamer’s audience engagement and activity levels. It can be used to explore patterns in streaming popularity, community size, and viewer behavior across different streamers.
