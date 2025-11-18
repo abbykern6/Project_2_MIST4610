@@ -94,6 +94,15 @@ FROM twitch_data
 WHERE "Peak viewers" = (
     SELECT MIN("Peak viewers")
     FROM twitch_data);
+### 5) Does being a partnered streamer lead to higher watch-time efficiency?
+SELECT
+    Partnered,
+    COUNT(*) AS num_streamers,
+    AVG("Watch time (minutes)" / NULLIF("Stream time(minutes)", 0)) 
+        AS avg_watch_time_per_stream_minute
+FROM twitch_data
+GROUP BY Partnered
+ORDER BY avg_watch_time_per_stream_minute DESC;
 ## Snowflake Dashboard:
 https://app.snowflake.com/us-east-1/qoc09333/#/twitchdash-dOKchud1
 
