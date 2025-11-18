@@ -89,11 +89,14 @@ FROM twitch_data
 ORDER BY "Followers" ASC
 LIMIT 10;
 ### 4) Which channel had the lowest peak viewers , indicating a lack of viral moments?
-SELECT Channel, "Peak viewers"
+SELECT 
+    Channel, 
+    "Peak viewers"
 FROM twitch_data
 WHERE "Peak viewers" = (
     SELECT MIN("Peak viewers")
-    FROM twitch_data);
+    FROM twitch_data
+);
 ### 5) Does being a partnered streamer lead to higher watch-time efficiency?
 SELECT
     Partnered,
