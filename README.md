@@ -111,9 +111,7 @@ ORDER BY avg_watch_time_per_stream_minute DESC;
 ## Snowflake Dashboard:
 https://app.snowflake.com/us-east-1/qoc09333/#/twitchdash-dOKchud1
 ## Snowflake Graphs
-git add path/to/your_image.png
-git commit -m "Add image"
-git push
+
 
 
 
