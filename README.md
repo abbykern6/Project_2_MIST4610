@@ -1,7 +1,7 @@
 # MIST4610-Project2-Group1
 ## Team Members:
 1. Abigail Kern ([@abbykern6](https://github.com/abbykern6))
-2. Lauryn Thomas 
+2. Lauryn Thomas ([@laurynthomas](https://github.com/laurynthomas))
 3. Avery Carabajal ([@avery-carabajal](https://github.com/avery-carabajal))
 4. Will Hooks ([@williamhooks912-byte](https://github.com/williamhooks912-byte))
 ## Dataset Description:
