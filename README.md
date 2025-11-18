@@ -88,6 +88,8 @@ FROM
     streams_data
 ORDER BY
     percent_viewed DESC;
+<img width="1299" height="166" alt="Screenshot 2025-11-17 at 11 16 59 PM" src="https://github.com/user-attachments/assets/a66fc2f0-8f4f-464c-ab81-23546a3540da" />
+
 ### 2) Does being a mature streamer increase watch time? This compares mature vs non mature streamers watch time:
 SELECT Mature,
        AVG("Watch time (minutes)") AS avg_watch_time,
@@ -95,6 +97,7 @@ SELECT Mature,
        COUNT(*) AS num_streams
 FROM twitch_data
 GROUP BY Mature;
+
 ### 3) How many followers do the streamers with the 10 lowest average view time have?
 SELECT Channel, "Followers", "Average viewers"
 FROM twitch_data
