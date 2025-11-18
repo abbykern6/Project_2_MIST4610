@@ -97,12 +97,15 @@ SELECT Mature,
        COUNT(*) AS num_streams
 FROM twitch_data
 GROUP BY Mature;
+<img width="661" height="81" alt="Screenshot 2025-11-17 at 11 18 09 PM" src="https://github.com/user-attachments/assets/77fb1e3d-8596-476d-adb7-a65a79774ccd" />
 
 ### 3) How many followers do the streamers with the 10 lowest average view time have?
 SELECT Channel, "Followers", "Average viewers"
 FROM twitch_data
 ORDER BY "Followers" ASC
 LIMIT 10;
+<img width="661" height="172" alt="Screenshot 2025-11-17 at 11 18 43 PM" src="https://github.com/user-attachments/assets/8eed73c7-1e4a-45e1-9ee5-8c463e637eda" />
+
 ### 4) Which channel had the lowest peak viewers , indicating a lack of viral moments?
 SELECT 
     Channel, 
@@ -112,6 +115,8 @@ WHERE "Peak viewers" = (
     SELECT MIN("Peak viewers")
     FROM twitch_data
 );
+<img width="1302" height="96" alt="Screenshot 2025-11-17 at 11 19 32 PM" src="https://github.com/user-attachments/assets/7ac7cc4e-6d75-429d-ba83-36495a712f1e" />
+
 ### 5) Does being a partnered streamer lead to higher watch-time efficiency?
 SELECT
     Partnered,
@@ -121,6 +126,8 @@ SELECT
 FROM twitch_data
 GROUP BY Partnered
 ORDER BY avg_watch_time_per_stream_minute DESC;
+<img width="1302" height="96" alt="Screenshot 2025-11-17 at 11 20 03 PM" src="https://github.com/user-attachments/assets/4892f51c-e242-4563-9f55-b30b8eeff48e" />
+
 ## Snowflake Dashboard:
 https://app.snowflake.com/us-east-1/qoc09333/#/twitchdash-dOKchud1
 
