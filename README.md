@@ -3,7 +3,7 @@
 1. Abigail Kern ([@abbykern6](https://github.com/abbykern6)) 811539989
 2. Lauryn Thomas ([@laurynthomas](https://github.com/laurynthomas))
 3. Avery Carabajal ([@avery-carabajal](https://github.com/avery-carabajal))
-4. Will Hooks ([@williamhooks912-byte](https://github.com/williamhooks912-byte)) 
+4. Will Hooks ([@williamhooks912-byte](https://github.com/williamhooks912-byte)) 811211871
 ## Dataset Description:
 This dataset contains information about popular Twitch streamers and their performance metrics on the platform. Twitch is a live-streaming service primarily focused on gaming, entertainment, and creative content. The dataset captures quantitative data that reflects each streamer’s audience engagement and activity levels. It can be used to explore patterns in streaming popularity, community size, and viewer behavior across different streamers.
 Dimensions: 
